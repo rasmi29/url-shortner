@@ -1,6 +1,9 @@
 import express from 'express';
 import urlRoute from "./routes/url.router.js"
 import connectDb from './config/db.js';
+import dotenv from "dotenv";
+
+dotenv.config();
 
 //create server
 const app = express();
