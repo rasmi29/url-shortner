@@ -1,0 +1,19 @@
+import express from 'express';
+import urlRoute from "./routes/url.router.js"
+import connectDb from './config/db.js';
+
+//create server
+const app = express();
+
+//body parser
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+
+//routing
+app.use("/api/url",urlRoute);
+
+//database connection
+connectDb();
+//listening on port  
+const PORT = 8000
+app.listen(PORT,()=> console.log(`server started at port no ${PORT}`));
